@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, config, ... }: {
   boot = {
     loader = {
       systemd-boot = {
@@ -47,8 +47,8 @@
       systemService = true;
       openDefaultPorts = true;
       user = "lukas";
-      dataDir = "${users.users.lukas.home}/sync";
-      configDir = "${users.users.lukas.home}/.syncthing";
+      dataDir = "${config.users.users.lukas.home}/sync";
+      configDir = "${config.users.users.lukas.home}/.syncthing";
     };
   };
 }
