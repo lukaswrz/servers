@@ -47,8 +47,8 @@
       systemService = true;
       openDefaultPorts = true;
       user = "lukas";
-      dataDir = "${config.users.users.lukas.home}/sync";
-      configDir = "${config.users.users.lukas.home}/.syncthing";
+      dataDir = "${users.users.lukas.home}/sync";
+      configDir = "${users.users.lukas.home}/.syncthing";
     };
   };
 }
