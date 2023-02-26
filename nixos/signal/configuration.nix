@@ -40,12 +40,12 @@
     };
   };
 
-  # services = {
-  #   syncthing = {
-  #     enable = true;
-  #     user = "lukas";
-  #     dataDir = "${config.users.users.username.home}/sync";
-  #     configDir = "${config.users.users.username.home}/.syncthing";
-  #   };
-  # };
+  services = {
+    syncthing = {
+      enable = true;
+      user = "lukas";
+      dataDir = "${config.users.users.lukas.home}/sync";
+      configDir = "${config.users.users.lukas.home}/.syncthing";
+    };
+  };
 }
