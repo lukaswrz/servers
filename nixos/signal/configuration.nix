@@ -43,6 +43,9 @@
   services = {
     syncthing = {
       enable = true;
+
+      systemService = true;
+      openDefaultPorts = true;
       user = "lukas";
       dataDir = "${config.users.users.lukas.home}/sync";
       configDir = "${config.users.users.lukas.home}/.syncthing";
