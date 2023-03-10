@@ -56,7 +56,7 @@
       enable = true;
 
       recommendedGzipSettings = true;
-      recommendedBrotliSettings = true;
+      # recommendedBrotliSettings = true;
       recommendedTlsSettings = true;
       recommendedOptimisation = true;
 
