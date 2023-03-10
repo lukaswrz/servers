@@ -34,4 +34,41 @@
       extraGroups = [ "wheel" ];
     };
   };
+
+  security.acme = {
+    defaults.email = "lukas@wrz.one";
+    acceptTerms = true;
+  };
+
+  services = {
+    vaultwarden = {
+      enable = true;
+
+      config = {
+        SIGNUPS_ALLOWED = false;
+
+        ROCKET_ADDRESS = "127.0.0.1";
+        ROCKET_PORT = 8000;
+      };
+    };
+
+    nginx = {
+      enable = true;
+
+      recommendedGzipSettings = true;
+      recommendedBrotliSettings = true;
+      recommendedTlsSettings = true;
+      recommendedOptimisation = true;
+
+      virtualHosts = {
+        "vault.example.com" = {
+          enableACME = true;
+          forceSSL = true;
+          locations."/" = {
+            proxyPass = "http://127.0.0.1:8000";
+          };
+        };
+      };
+    };
+  };
 }
