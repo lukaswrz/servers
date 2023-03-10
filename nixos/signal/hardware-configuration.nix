@@ -39,6 +39,16 @@
     fsType = "vfat";
   };
 
+  fileSystems."/srv/storage" = {
+    device = "/dev/disk/by-label/storage";
+    fsType = "ext4";
+  };
+
+  fileSystems."/srv/backup" = {
+    device = "/dev/disk/by-label/backup";
+    fsType = "ext4";
+  };
+
   swapDevices = [{ device = "/dev/disk/by-label/swap"; }];
 
   networking.useDHCP = lib.mkDefault true;
