@@ -61,13 +61,13 @@
       recommendedOptimisation = true;
 
       virtualHosts = {
-        "wrz.one" = {
-          enableACME = true;
-          forceSSL = true;
-          locations."/" = {
-            root = "/srv/http/wrz.one";
-          };
-        };
+        # "wrz.one" = {
+        #   enableACME = true;
+        #   forceSSL = true;
+        #   locations."/" = {
+        #     root = "/srv/http/wrz.one";
+        #   };
+        # };
         "defenestrated.systems" = {
           enableACME = true;
           forceSSL = true;
