@@ -61,11 +61,41 @@
       recommendedOptimisation = true;
 
       virtualHosts = {
-        "vault.example.com" = {
+        "wrz.one" = {
           enableACME = true;
           forceSSL = true;
           locations."/" = {
+            root = "/srv/http/wrz.one";
+          };
+        };
+        "defenestrated.systems" = {
+          enableACME = true;
+          forceSSL = true;
+          locations."/" = {
+            root = "/srv/http/defenestrated.systems";
+          };
+        };
+        "vault.defenestrated.systems" = {
+          enableACME = true;
+          forceSSL = true;
+          locations."/" = {
+            recommendedProxySettings = true;
             proxyPass = "http://127.0.0.1:8000";
+          };
+        };
+        "share.defenestrated.systems" = {
+          enableACME = true;
+          forceSSL = true;
+          locations."/" = {
+            recommendedProxySettings = true;
+            proxyPass = "http://127.0.0.1:8010";
+          };
+        };
+        "static.defenestrated.systems" = {
+          enableACME = true;
+          forceSSL = true;
+          locations."/" = {
+            root = "/srv/http/static.defenestrated.systems";
           };
         };
       };
