@@ -13,7 +13,7 @@
   console.keyMap = "us";
 
   networking = {
-    hostName = "haze";
+    hostName = "abacus";
     networkmanager.enable = true;
     firewall = {
       enable = true;

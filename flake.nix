@@ -30,9 +30,9 @@
           specialArgs = { inherit inputs outputs; };
           modules = [ ./nixos/signal ];
         };
-        haze = nixpkgs.lib.nixosSystem {
+        abacus = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
-          modules = [ ./nixos/haze ];
+          modules = [ ./nixos/abacus ];
         };
       };
 
@@ -42,10 +42,10 @@
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [ ./home-manager/signal/lukas.nix ];
         };
-        "lukas@haze" = home-manager.lib.homeManagerConfiguration {
+        "lukas@abacus" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
           extraSpecialArgs = { inherit inputs outputs; };
-          modules = [ ./home-manager/haze/lukas.nix ];
+          modules = [ ./home-manager/abacus/lukas.nix ];
         };
       };
     };
